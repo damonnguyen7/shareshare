@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row text-center">
+    <h1>Class Detail Page</h1>
+    <% if(error) { %>
+      <%- error %>
+    <% } else { %>
+      <p>Class Name: <%- classData.class_name %></p>
+      <p>Class Number: <%- classData.class_number %></p>
+      <p>Class Subject: <%- classData.class_subject %></p>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container" id="class-edit-page">
+  <div class="row edit-page">
+    <div class="col-xs-12 text-center">
+      <h4>Editing Class: <%- classInstance.class_name %></h4>
+      <form action="/class/edit/<%- classInstance.id %>" method="POST">
+          <div class="form-group col-md-10 col-md-offset-1">
+            <input id="class_name" type="text" placeholder="enter class name" name="class_name" class="form-control" value="<%- classInstance.class_name %>">
+          </div>
+          <div class="form-group col-md-10 col-md-offset-1">
+            <input id="class_number" type="text" placeholder="enter class number" name="class_number" class="form-control" value="<%- classInstance.class_number %>">
+          </div>
+          <div class="form-group col-md-10 col-md-offset-1">
+            <input id="class_subject" type="text" placeholder="enter class subject" name="class_subject" class="form-control" value="<%- classInstance.class_subject %>">
+          </div>
+          <div class="buttons form-group col-xs-12">
+            <input type="submit" value="update" class="btn btn-primary btn-xs">
+            <a href="/class/all" class="btn btn-danger btn-xs">cancel</a>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

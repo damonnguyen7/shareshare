@@ -1,0 +1,39 @@
+<dir class="container" ng-controller="NoteListController" id="list-all-notes">
+  <div class="row">
+    <div class="col-xs-12">
+      <input class="form-control" type="text" ng-model="searchBox" placeholder="filter notes">
+    </div>
+    <ul class="list-group">
+      <li ng-repeat="note in noteList | filter: searchBox" class="note-item list-group-item col-xs-12 col-md-3 hvr-shrink text-center">
+        <a href="/note/details/{{ note._id }}">
+          <div class="col-xs-12">
+            <h4>{{ note.note_title }}</h4>
+          </div>
+          <img class="img-responsive center-block max-height-150 min-height-150" ng-src="{{ note.note_image_url}}">
+          <p class="limited-text">{{ note.note_description }}</p>
+          <div class="col-xs-12 author-info-container">
+            <div class="col-xs-4">
+              <img class="note-item-avatar-img img-responsive max-height-50" ng-src="{{ note.author_avatar_url }}">
+            </div>
+            <div class="col-xs-8" style="padding: 0px 0px;">
+              <p class="note-item-auth-des">by {{ note.author_display_name }}</p>
+            </div>
+          </div>
+          <form action="{{ getActionURI(note._id) }}" method="GET">
+            <a href="/note/edit/{{ note._id }}" class="btn btn-primary btn-xs">edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/note/all/delete/{{ note.note_title }}" class="btn btn-danger btn-xs">delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+          </form>
+        </a>
+      </li>
+    </ul>
+    <div class="col-xs-12 text-center fixed-bottom-button">
+        <a href="/note/create/<%- class_name %>"
+           class="btn btn-primary">
+           <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+          <span style="font-size: 2em;">
+             New Note
+          </span>
+         </a>
+    </div>
+  </div>
+</dir>

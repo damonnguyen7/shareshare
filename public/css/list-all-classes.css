@@ -1,0 +1,42 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.class-list-container {
+  height: 620px;
+  width: 100%;
+  overflow: scroll;
+}
+
+
+.list-group-item {
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #F8F8F8;
+}
+
+button {
+  margin-left: 5px;
+}
+
+.badge {
+  background-color: #e60000;
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+

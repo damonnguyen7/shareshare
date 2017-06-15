@@ -1,0 +1,18 @@
+<div class="container" id="delete-confirmation">
+  <div class="container text-center delete-confirmation">
+    <div class="col-xs-12">
+      <h3>Are you sure you want to delete:  </h3>
+      <p><span><b><%= item === 'class' ? data.class_name : data.note_title %></b></span></p>
+    </div>
+    <div class="col-xs-12">
+      <a href="/<%= item === 'class' ? 'class' : 'note' %>/all/delete/confirmation/<%- data._id %>" class="btn btn-danger btn-xs">delete</a>
+      <% if (item === 'class') { %>
+      <a href="/class/all" class="btn btn-primary btn-xs">cancel</a>
+      <% } else if (item === 'note' && current_note_detail_page !== false) { %>
+      <a href="<%- current_note_detail_page %>" class="btn btn-primary btn-xs">cancel</a>
+      <% } else { %>
+      <a href="/note/all/<%- class_name %>" class="btn btn-primary btn-xs">cancel</a>
+      <% } %>
+    </div>
+  </div>
+</div>

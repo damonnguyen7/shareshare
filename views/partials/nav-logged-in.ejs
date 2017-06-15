@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" id="navigation-bar-logged-in-classes-notes-list">
+    <div class="container">
+        <a class="navbar-brand topnav" href="/">shareshare</a>
+            <a href="/class/all" style="line-height: 50px;">
+              All Classes
+            </a>&nbsp;
+          <div class="pull-right">
+            <a href="#" data-toggle="popover" data-placement="bottom" title="Welcome <%- user.displayname %>" data-content="<a href='/logout' class='logoutLink'><i class='fa fa-power-off' aria-hidden='true'></i> logout</a>  " data-html="true">
+            <img class="pop-target pull-right hvr-grow img-responsive" src="<%- user.avatar_url %>" style="border-radius: 50%; height: 50px;">
+          </a>
+
+          </div>
+    </div>
+</nav>
+
+<div id="popover-content">
+  <a href="/logout"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+</div>

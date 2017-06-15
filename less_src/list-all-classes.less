@@ -1,0 +1,64 @@
+.class-item {
+  padding: 5px;
+}
+
+.limited-text {
+  max-width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #337AB7;
+}
+
+.badge {
+  color: #ABB7B7;
+  background-color: @content-background-color;
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+.fixed-bottom-button {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+//minimizing window horizontally
+@media screen and (max-width: 991px) {
+  .class-item {
+    padding: 1px;
+  }
+}
+
+//tablet
+@media screen and (max-width: 768px) {
+  .class-item {
+    padding: 1px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .append-button-mobile {
+    display: block;
+  }
+}
+
+//mobile
+@media screen and (max-width: 320) {
+  .class-item {
+    padding: 1px;
+  }
+  .append-button-mobile {
+    margin-top: 200%;
+  }
+}

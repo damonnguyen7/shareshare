@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <div class="row">
+          <% for(var i = 0 ; i < files.length; i++) { %>
+            <div class="col-xs-12">
+              <h5><%= files[i].title%></h5>
+              <p><%= files[i].createdDate%><p>
+              <iframe
+                src="<%= files[i].embedLink %>"
+                width="580"
+                height="480">
+              </iframe>
+            </div>
+          <% } %>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

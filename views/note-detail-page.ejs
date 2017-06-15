@@ -1,0 +1,61 @@
+<div class="container" id="note-detail-page">
+  <div class="row">
+    <div class="col-xs-12" style="padding: 15px 0px;">
+      <div class="col-xs-12 col-md-5 col-lg-5">
+        <div class="col-xs-6 col-md-3 col-lg-3" style="height: 78px;">
+          <img class="img-responsive avatar-img" src="<%- noteData.author_avatar_url %>">
+        </div>
+        <div class="col-xs-6 col-md-9 col-lg-9">
+          <div class="h1 margin-top-0"><%- noteData.note_title %></div>
+          <div class="h4">by <%- noteData.author_display_name %> at <%- noteData.date %></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12" style="margin-top: 20px; background-color: #fff; border-radius: 15px; padding: 15px;">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <p><b>Description: </b><br /><%- noteData.note_description %></p>
+          <p><b>OCR Text: </b><br /><%- noteData.note_text %></p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="col-xs-12">
+            <p><b>Image: </b></p>
+            <img class="img-responsive" src="<%- noteData.note_image_url %>" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-xs-12 button-container" style="margin-top: 10px;">
+        <a class="btn btn-success btn-xs" href="<%- noteData.note_image_url %>" download="">download image</a>
+        <a href="/note/edit/<%- noteData._id %>" class="btn btn-primary btn-xs">edit</a>
+        <a href="/note/all/delete/<%- noteData.note_title %>" class="btn btn-danger btn-xs">delete</a>
+      </div>
+    </div>
+    <div class="note-comment">
+      <div class="row" style="margin-top: 0px;">
+        <div class="col-xs-12 note-textarea">
+          <h4 class="text-center">Leave a comment</h4>
+          <textarea data-container="comment_text" class="form-control" placeholder="Enter comment..."></textarea>
+          <button data-noteid="<%= noteData.id %>" data-container="submit_comment" class="comment-submit btn btn-primary btn-xs pull-right">Submit</button>
+        </div>
+        <% for(var i = 0; i < comments.length; i++) { %>
+          <div class="individual-comment col-xs-12">
+            <div class="col-xs-1">
+              <img src="<%- comments[i].author_img_url %>" class="publisher-image">
+              <p class="publisher-comment-username"><%= comments[i].author_name %></p>
+            </div>
+            <p class="comment-description col-xs-10"><%= comments[i].text %></p>
+            <% if (currentUser === comments[i].author_name) { %>
+            <div class="col-xs-12">
+              <a href="" class="btn btn-danger btn-xs pull-right">delete</a>
+              <a href="" class="btn btn-primary btn-xs pull-right">edit</a>
+            </div>
+            <% } %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+  </div>
+</div>

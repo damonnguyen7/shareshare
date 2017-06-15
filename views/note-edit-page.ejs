@@ -1,0 +1,34 @@
+<div class="container" id="note-edit-page">
+  <div class="note-edit-page col-xs-12">
+    <h3 class="text-center edit-h3">Editing <%- note.note_title %></h3>
+    <div class="col-xs-12 col-md-8 col-lg-8 col-md-offset-2">
+      <div class="col-xs-12 col-md-10 col-lg-10 col-lg-offset-1">
+        Image:
+        <img class="img-responsive" src="<%- note.note_image_url %>">
+      </div>
+    </div>
+    <form class="col-xs-12 edit-form" action="/note/edit/<%- note._id %>" method="POST">
+      <div class="col-xs-12 col-md-8 col-lg-8 col-md-offset-2">
+        Title:
+        <input type="text" placeholder="enter note title" name="note_title" class="form-control" value="<%- note.note_title %>">
+      </div>
+      <div class="col-xs-12 col-md-8 col-lg-8 col-md-offset-2">
+        Description:
+        <textarea type="text" placeholder="enter note description" name="note_description" class="form-control"><%- note.note_description %></textarea>
+      </div>
+      <div class="col-xs-12 col-md-8 col-lg-8 col-md-offset-2">
+        Text:
+        <textarea type="text" placeholder="enter note description" name="note_text" class="form-control height-min-200"><%- note.note_text %></textarea>
+      </div>
+
+      <div class="col-xs-12 text-center edit-button-container" style="margin-bottom: 15px;">
+        <input type="submit" value="update" class="btn btn-primary">
+        <% if (current_note_detail_page !== false) { %>
+          <a href="<%- current_note_detail_page %>" class="btn btn-danger">cancel</a>
+          <% } else { %>
+            <a href="<%- currentClassUrl %>" class="btn btn-danger">cancel</a>
+            <% } %>
+      </div>
+    </form>
+  </div>
+</div>

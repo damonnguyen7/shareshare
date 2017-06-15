@@ -1,0 +1,28 @@
+<div class="container" id="note-creation-page">
+  <div class="row">
+    <h4 class="text-center">Create a note for <%- class_name %></h4>
+    <form method="POST"
+     action="/note/create/<%- class_name %>" class="col-xs-12 text-center" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <input type="text" placeholder="enter note title" name="note_title" class="form-control">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <textarea placeholder="enter note description" name="note_description" class="form-control"></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <input type="file" placeholder="choose image" name="image" class="form-control">
+        </div>
+      </div>
+      <br>
+      <input type="submit" value="create note" class="btn btn-success text-center">
+      <a href="<%- currentClassUrl %>" class="btn btn-danger">cancel</a>
+    </form>
+  </div>
+</div>
